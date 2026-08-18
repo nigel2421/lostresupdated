@@ -1,0 +1,144 @@
+.my-account-page {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.my-account-page h1 {
+  text-align: left;
+  margin-bottom: 2.5rem;
+  color: #333;
+  font-size: 2.5rem;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.account-details {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.account-details p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.admin-badge {
+  display: inline-block;
+  background: #ff80ab;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.action-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.action-section h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  border-left: 4px solid #4A90E2;
+  padding-left: 1rem;
+}
+
+.admin-section h3 {
+  border-left-color: #ff80ab;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.visit-store-button {
+  padding: 1.2rem;
+  background-color: #4A90E2;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visit-store-button.second {
+  background-color: #fff;
+  color: #4A90E2;
+  border: 2px solid #4A90E2;
+}
+
+.visit-store-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(74, 144, 226, 0.2);
+}
+
+.visit-store-button.admin-link {
+  background: #f8f8fb;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.visit-store-button.admin-link:hover {
+  background: #fff;
+  border-color: #ff80ab;
+  color: #ff80ab;
+}
+
+.account-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.logout-button {
+  padding: 1rem 2rem;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.logout-button:hover {
+  background-color: #ff1744;
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .my-account-page {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,132 @@
+@keyframes macaron-skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.macaron-skeleton-pulse {
+  background: linear-gradient(
+    90deg,
+    #f2f4f7 0%,
+    #fcf3f5 35%,
+    #f2f4f7 70%
+  );
+  background-size: 200% 100%;
+  animation: macaron-skeleton-shimmer 1.6s infinite ease-in-out;
+}
+
+.macaron-skeleton-card {
+  background-color: #fffdf9;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.macaron-skeleton-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  background-color: #f7fafc;
+  overflow: hidden;
+}
+
+.macaron-skeleton-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.macaron-skeleton-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 70px;
+  height: 22px;
+  border-radius: 50px;
+}
+
+.macaron-skeleton-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.macaron-skeleton-title {
+  width: 75%;
+  height: 24px;
+  margin-bottom: 0.6rem;
+  border-radius: 6px;
+}
+
+.macaron-skeleton-price {
+  width: 45%;
+  height: 18px;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+}
+
+.macaron-skeleton-stars {
+  width: 100px;
+  height: 16px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.macaron-skeleton-select {
+  width: 100%;
+  height: 38px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.macaron-skeleton-button {
+  width: 100%;
+  height: 44px;
+  border-radius: 50px;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .macaron-skeleton-card {
+    border-radius: 14px;
+  }
+  
+  .macaron-skeleton-info {
+    padding: 0.85rem;
+  }
+
+  .macaron-skeleton-title {
+    height: 18px;
+    width: 85%;
+  }
+
+  .macaron-skeleton-price {
+    height: 15px;
+  }
+
+  .macaron-skeleton-stars {
+    height: 14px;
+    width: 80px;
+  }
+
+  .macaron-skeleton-select {
+    height: 34px;
+  }
+
+  .macaron-skeleton-button {
+    height: 38px;
+  }
+}

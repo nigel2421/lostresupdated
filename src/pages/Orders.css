@@ -1,0 +1,243 @@
+.orders-page {
+  padding: 2rem;
+  background-color: #f8f5f2;
+}
+
+.orders-page h1,
+.orders-page p,
+.orders-page span {
+  color: #2D3748;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.orders-header-top {
+  margin-bottom: 1.5rem;
+}
+
+.back-to-account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.back-to-account-link:hover {
+  background-color: #f8f8fb;
+  border-color: #4A90E2;
+  transform: translateX(-5px);
+}
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 1rem;
+  text-align: left;
+  color: #2D3748;
+}
+
+.orders-table thead {
+  background-color: #f2f2f2;
+}
+
+.order-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.order-status.new {
+  background-color: #ffc107;
+}
+
+.order-status.confirmed {
+  background-color: #007bff;
+}
+
+.order-status.depositpaid {
+  background-color: #fd7e14;
+}
+
+.order-status.delivered {
+  background-color: #28a745;
+}
+
+.order-status.cancelled {
+  background-color: #dc3545;
+}
+
+.order-status.pending {
+  background-color: #6f42c1;
+}
+
+.order-status.processed {
+  background-color: #20c997;
+}
+
+
+.view-more-button {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-more-button:hover {
+  background-color: #357ABD;
+}
+
+.page-size-selector {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #2D3748;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-size-selector:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: #2D3748;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #4A90E2;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #4A90E2;
+  color: white;
+  border-color: #4A90E2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
+
+.pagination button svg {
+  font-size: 1.1rem;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  color: #ccc;
+}
+
+
+@media (max-width: 768px) {
+  .orders-page {
+    padding: 1rem;
+  }
+
+  .orders-header {
+    margin-bottom: 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .search-bar {
+    flex-grow: 1;
+  }
+
+  .orders-table thead {
+    display: none;
+  }
+
+  .orders-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+
+  .orders-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .orders-table td:last-child {
+    border-bottom: none;
+  }
+
+  .orders-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    margin-right: 1rem;
+    color: #2D3748;
+  }
+}
