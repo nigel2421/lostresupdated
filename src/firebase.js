@@ -1,20 +1,22 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics, isSupported } from "firebase/analytics";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, setPersistence, browserLocalPersistence } from "firebase/auth"; // Import providers
 import { getFunctions } from "firebase/functions"; // Import getFunctions
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBqdmuPVTlDAqNA5PvQtS5uckX-W1cdm_8",
   authDomain: "lostresmacarons-2421.firebaseapp.com",
   projectId: "lostresmacarons-2421",
-  storageBucket: "lostresmacarons-2421.appspot.com",
+  storageBucket: "lostresmacarons-2421.firebasestorage.app",
   messagingSenderId: "161079678038",
-  appId: "1:161079678038:web:54dca6816404da20add7f7"
+  appId: "1:161079678038:web:54dca6816404da20add7f7",
+  measurementId: "G-ZWZPKP21NT"
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -22,6 +24,16 @@ const db = getFirestore(app);
 const auth = getAuth(app); // Initialize and export auth
 const functions = getFunctions(app); // Initialize functions
 setPersistence(auth, browserLocalPersistence);
+
+// Initialize Analytics if supported in browser environment
+let analytics = null;
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
+  }).catch(() => {});
+}
 
 // Initialize providers
 const googleProvider = new GoogleAuthProvider();
@@ -48,4 +60,4 @@ const addReview = async (review) => {
   }
 };
 
-export { db, auth, functions, googleProvider, getReviews, addReview }; // Export auth, functions and providers
+export { app, analytics, db, auth, functions, googleProvider, getReviews, addReview }; // Export auth, functions and providers

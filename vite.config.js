@@ -10,9 +10,29 @@ export default defineConfig({
     setupFiles: './src/setupTests.js',
   },
   build: {
+    chunkSizeWarningLimit: 800,
     rollupOptions: {
       output: {
-        // manualChunks removed to fix dependency loading order
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('firebase')) {
+              return 'vendor-firebase';
+            }
+            if (id.includes('jspdf') || id.includes('html2canvas') || id.includes('papaparse')) {
+              return 'vendor-export';
+            }
+            if (id.includes('recharts') || id.includes('d3')) {
+              return 'vendor-charts';
+            }
+            if (id.includes('framer-motion') || id.includes('lucide-react') || id.includes('react-icons')) {
+              return 'vendor-icons-motion';
+            }
+            if (id.includes('react-router-dom') || id.includes('react-dom') || id.includes('react')) {
+              return 'vendor-react';
+            }
+            return 'vendor-other';
+          }
+        },
       },
     },
   },
